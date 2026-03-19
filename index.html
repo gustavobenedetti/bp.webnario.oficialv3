@@ -186,15 +186,19 @@
 
   .hero-title-red {
     display: block; 
-    font-size: clamp(15px, 4.2vw, 18px); 
+    font-size: clamp(14px, 3.8vw, 17px); 
     font-weight: 900;
-    color: var(--orange); 
+    color: var(--white); 
     text-transform: none; 
     letter-spacing: -.01em;
     line-height: 1.25; 
     margin-bottom: 0px; 
     position: relative; 
     z-index: 1;
+  }
+
+  .title-red-word {
+    color: var(--orange);
   }
 
   .live-class-box {
@@ -232,7 +236,7 @@
 
   .live-class-box .hero-sub-title {
     margin: 0;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
     color: var(--white);
     line-height: 1.4;
@@ -686,7 +690,7 @@
     width: 100%; 
     max-width: 420px; 
     margin: 0 auto 10px;
-    background: var(--orange); 
+    background: #25D366; 
     color: #fff; 
     border: none; 
     border-radius: 10px;
@@ -710,12 +714,12 @@
     left: -100%; 
     width: 55%; 
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(37,211,102,.4), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.3), transparent);
     animation: green-shine 2.2s linear infinite;
   }
 
   @keyframes green-shine { 0%{left:-55%} 100%{left:155%} }
-  .btn-main:hover  { background: #D95A08; transform: translateY(-1px) scale(1.01); }
+  .btn-main:hover  { background: #1D9E75; transform: translateY(-1px) scale(1.01); }
   .btn-main:active { transform: translateY(0) scale(.99); }
 
   .spots-counter {
@@ -782,7 +786,7 @@
         <div class="title-bg-line" style="top:50%"></div>
         <div class="title-bg-line" style="top:80%"></div>
       </div>
-      <span class="hero-title-red">Até quando você vai tolerar um comercial<br>que não entrega o que deveria?</span>
+      <span class="hero-title-red">Até quando você vai tolerar um <span class="title-red-word">comercial</span><br>que <span class="title-red-word">não entrega</span> o que deveria?</span>
     </div>
 
     <!-- CAIXA AULA AO VIVO -->
