@@ -160,67 +160,74 @@
     font-size: clamp(18px, 5.2vw, 26px); 
     font-family: 'Bebas Neue', sans-serif;
     font-weight: 400;
-    color: var(--white); 
+    color: var(--orange); 
     text-transform: uppercase;
     letter-spacing: 0.05em;
     line-height: 1.15; 
-    margin-bottom: 0px; 
+    margin-bottom: 4px; 
     position: relative; 
     z-index: 1;
   }
 
   .title-red-word { color: var(--white); }
 
+  .hero-description {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.5;
+    margin: 0 auto 16px;
+    max-width: 420px;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+  }
+
   .live-class-box {
-    background: rgba(245, 245, 245, 0.05);
-    border: 1px solid rgba(245, 245, 245, 0.12);
+    background: rgba(37, 211, 102, 0.08);
+    border: 1px solid rgba(37, 211, 102, 0.2);
     border-radius: 12px;
-    padding: 10px 14px;
-    margin: 6px auto 8px;
+    padding: 8px 12px;
+    margin: 0 auto 8px;
     max-width: 420px;
     font-family: var(--font);
     line-height: 1.3;
   }
 
-  .live-class-label {
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-  }
-
-  .live-class-dot {
-    width: 6px; height: 6px;
-    background: var(--red);
-    border-radius: 50%;
-    animation: pulse 1.5s infinite;
-  }
-
   .live-class-box .hero-sub-title {
     margin: 0;
-    font-size: 10px;
-    font-weight: 800;
+    font-size: 12px;
+    font-weight: 700;
     color: var(--white);
-    line-height: 1.3;
+    line-height: 1.4;
     text-transform: uppercase;
     display: block;
+  }
+
+  @keyframes gradient-move {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
 
   .hero-copy-in-box {
-    font-size: 10px; 
-    color: #25D366; 
-    line-height: 1.3;
-    font-weight: 800; 
+    font-size: 13px;
+    color: #25D366;
+    line-height: 1.4;
+    font-weight: 700; 
     text-align: center;
-    margin: 5px 0 0 0;
+    margin: 0;
     text-transform: uppercase;
     display: block;
+  }
+
+  .gear-footer {
+    background: linear-gradient(270deg, rgba(37,211,102,0.04), rgba(37,211,102,0.18), rgba(37,211,102,0.04));
+    background-size: 300% 300%;
+    animation: gradient-move 4s ease infinite;
+    border-top: 1px solid rgba(37, 211, 102, 0.2);
+    padding: 10px 12px;
+    text-align: center;
   }
 
   .event-highlight {
@@ -228,26 +235,9 @@
     border: 1.5px solid rgba(255, 107, 107, 0.3);
     border-radius: 10px;
     padding: 10px 14px;
-    margin: 0 auto 8px;
+    margin: 12px auto 6px;
     max-width: 420px;
     text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .event-highlight::before {
-    content: '';
-    position: absolute;
-    top: 0; left: -100%;
-    width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    animation: shimmer 3s infinite;
-  }
-
-  @keyframes shimmer {
-    0% { left: -100%; }
-    50% { left: 100%; }
-    100% { left: 100%; }
   }
 
   .event-highlight-text {
@@ -264,9 +254,44 @@
     background: rgba(245, 245, 245, 0.06);
     border: 1px solid rgba(245, 245, 245, 0.12);
     border-radius: 14px;
-    padding: 12px;
     margin: 0 auto 6px;
     max-width: 420px;
+    overflow: hidden;
+  }
+
+  .gear-header {
+    background: rgba(239, 68, 68, 0.12);
+    border-bottom: 1px solid rgba(239, 68, 68, 0.2);
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+
+  .gear-header .gear-live-dot {
+    width: 6px;
+    height: 6px;
+    background: #ef4444;
+    border-radius: 50%;
+    animation: live-pulse 1.5s infinite;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .gear-header .gear-live-dot.dot-left  { left: 18px; }
+  .gear-header .gear-live-dot.dot-right { right: 18px; }
+
+
+
+  .gear-footer .hero-copy-in-box {
+    margin: 0;
   }
 
   .gear-track { 
@@ -281,7 +306,7 @@
     background: transparent;
     border: none;
     border-radius: 0; 
-    padding: 10px 6px 8px; 
+    padding: 10px 6px 16px; 
     text-align: center;
     position: relative; 
     overflow: visible; 
@@ -352,8 +377,6 @@
   .gc2.active .gear-name { color: #25D366; }
   .gc3.active .gear-name { color: #7F77DD; }
 
-
-
   .live-label {
     display: flex; 
     align-items: flex-start; 
@@ -375,7 +398,7 @@
     justify-content: center;
     width: 100%; 
     max-width: 420px; 
-    margin: 0 auto 6px;
+    margin: 12px auto 6px;
     background: #25D366; 
     color: #fff; 
     border: none; 
@@ -419,19 +442,25 @@
     margin-right: auto;
   }
 
-  @keyframes urgency-pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.6; }
+  @keyframes live-pulse { 
+    0%, 100% { opacity: 1; transform: scale(1); } 
+    50% { opacity: 0.5; transform: scale(0.8); } 
   }
 
-  .footer { 
-    margin-top: 32px; 
-    padding-top: 16px; 
-    border-top: 1px solid rgba(36, 36, 36, 0.8); 
-    text-align: center; 
-    font-size: 10px; 
-    color: var(--gray); 
-    font-weight: 500; 
+  .footer {
+    text-align: center;
+    font-size: 10px;
+    color: #555;
+    margin-top: 32px;
+    letter-spacing: 0.02em;
+  }
+
+  .elements-container .hero-description {
+    color: var(--white);
+    font-size: 14px;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.2);
   }
 </style>
 </head>
@@ -451,19 +480,21 @@
       <span class="hero-title-red">Até quando você vai tolerar um <span class="title-red-word">comercial</span><br>que <span class="title-red-word">não entrega</span> o que deveria?</span>
     </div>
 
-    <div class="live-class-box">
-      <div class="live-class-label"><div class="live-class-dot"></div>AULA AO VIVO</div>
-      <span class="hero-sub-title">Conheça a metodologia das 3 engrenagens<br>que leva empresas de 20 mil para 150 mil/mês.</span>
-      <p class="hero-copy-in-box">E saia com um plano de ação pronto para<br>implementar no seu negócio.</p>
-    </div>
-
-    <div class="event-highlight">
-      <span class="event-highlight-text">TERÇA-FEIRA ÀS 12H00 • GRATUITA • ONLINE</span>
-    </div>
-
+    <!-- ✅ elements-container: abre aqui e fecha logo após o gear-footer -->
     <div class="elements-container">
-      
-      <div class="gear-gallery">
+
+      <div class="gear-header">
+        <div class="gear-live-dot dot-left"></div>
+        <span>TREINAMENTO AO VIVO</span>
+        <div class="gear-live-dot dot-right"></div>
+      </div>
+
+      <div class="gear-content">
+        <p class="hero-description" style="margin-top: 12px; margin-bottom: 12px;">
+          CONHEÇA AS 3 ENGRENAGENS MAIS IMPORTANTES<br>DO COMERCIAL, QUE LEVARAM EMPRESAS<br><span style="text-decoration: underline;">DE 20 MIL PARA 150 MIL/MÊS.</span>
+        </p>
+
+
         <div class="gear-track" id="gear-track">
 
           <div class="gear-card gc1 active" id="gc0">
@@ -502,21 +533,27 @@
             <div class="gear-name">Construção de oferta</div>
           </div>
 
-        </div>
-      </div>
+        </div><!-- /gear-track -->
+      </div><!-- /gear-content -->
 
+      <div class="gear-footer">
+        <p class="hero-copy-in-box">SAIA COM UM PLANO DE AÇÃO PRONTO PARA<br>IMPLEMENTAR NO SEU NEGÓCIO!</p>
+      </div><!-- /gear-footer -->
 
+    </div><!-- /elements-container ✅ FECHA AQUI -->
 
+    <div class="event-highlight">
+      <span class="event-highlight-text">TERÇA-FEIRA ÀS 12H00 • GRATUITA • ONLINE</span>
     </div>
 
-    <div class="live-label">
-      <span>Acesse o grupo oficial!</span>
-    </div>
+    <p style="font-size: 11px; color: #888; text-align: center; max-width: 420px; margin: 8px auto 4px; line-height: 1.6;">
+      O link da aula ao vivo será enviado no grupo.<br>Para ter acesso, clique no botão abaixo.
+    </p>
 
     <a href="https://chat.whatsapp.com/Iwi10qePQ49G6L6Z9wo7KU"
        class="btn-main"
        id="whatsapp-btn">
-      GARANTIR ACESSO EXCLUSIVO
+      ACESSAR GRUPO OFICIAL AGORA!
     </a>
 
     <div class="spots-counter">
